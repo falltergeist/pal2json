@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Falltergeist developers
+ * Copyright (c) 2015-2018 Falltergeist developers
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
@@ -57,7 +57,7 @@ uint8_t readUINT8(std::ifstream& stream)
 void usage(std::string binaryName)
 {
     std::cout << "PAL to JSON converter v0.0.1" << std::endl;
-    std::cout << "Copyright (c) 2015 Falltergeist developers" << std::endl;
+    std::cout << "Copyright (c) 2015-2018 Falltergeist developers" << std::endl;
     std::cout << "Usage: " << binaryName << " <PAL filename>" << std::endl;
 }
 
