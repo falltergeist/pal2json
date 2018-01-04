@@ -1,5 +1,6 @@
 0.0.2 Under development
 -----------------------
+- AppVeyor configuration (alexeevdv)
 
 0.0.1 (2018-01-03)
 -----------------------

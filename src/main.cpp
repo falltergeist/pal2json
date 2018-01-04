@@ -34,7 +34,7 @@
 uint32_t readUINT32(std::ifstream& stream)
 {
     uint32_t value;
-    char* buff = reinterpret_cast<char*>(&value);
+    auto buff = reinterpret_cast<char*>(&value);
     stream.read(buff, 4);
     std::reverse(buff, buff + 4);
     return value;
@@ -48,23 +48,21 @@ int32_t readINT32(std::ifstream& stream)
 uint8_t readUINT8(std::ifstream& stream)
 {
     uint8_t value;
-    char* buff = reinterpret_cast<char*>(&value);
+    auto buff = reinterpret_cast<char*>(&value);
     stream.read(buff, 1);
     return value;
 }
 
-
-void usage(std::string binaryName)
+void usage(const std::string& binaryName)
 {
-    std::cout << "PAL to JSON converter v0.0.1" << std::endl;
+    std::cout << "PAL to JSON converter v0.0.2" << std::endl;
     std::cout << "Copyright (c) 2015-2018 Falltergeist developers" << std::endl;
     std::cout << "Usage: " << binaryName << " <PAL filename>" << std::endl;
 }
 
 int main(int argc, char** argv)
 {
-    if (argc != 2)
-    {
+    if (argc != 2) {
         usage(argv[0]);
         return 1;
     }
@@ -73,17 +71,16 @@ int main(int argc, char** argv)
     std::ifstream in;
 
     in.open(filename.c_str(), std::ios_base::binary | std::ios_base::in);
-    if (!in.is_open())
-    {
+    if (!in.is_open()) {
         std::cout << "Can't open file: " << filename << std::endl;
+        usage(argv[0]);
         return 1;
     }
 
     std::cout << "{" << std::endl;
     std::cout << "    \"indexes\": [" << std::endl;
 
-    for (unsigned i = 0; i != 256; i++)
-    {
+    for (unsigned i = 0; i != 256; i++) {
         uint8_t red = readUINT8(in);
         uint8_t green = readUINT8(in);
         uint8_t blue = readUINT8(in);
