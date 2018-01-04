@@ -1,5 +1,5 @@
-pal2json (0.0.1-1~artful) artful; urgency=medium
+pal2json (0.0.2-1~artful) artful; urgency=medium
 
   * No-change port to artful
 
- -- Dmitry V. Alexeev <mail@alexeevdv.ru>  Wed, 03 Jan 2018 18:19:16 +0300
+ -- Dmitry V. Alexeev <mail@alexeevdv.ru>  Wed, 04 Jan 2018 13:43:16 +0300
